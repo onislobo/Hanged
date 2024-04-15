@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Hanged game</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="../static/img/favicon.png" rel="icon">
+    
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+          rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+
+    <!-- Libraries CSS Files -->
+    <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/lib/animate/animate.min.css" rel="stylesheet">                    
+    <link href="../static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">                                                            
+    <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">                                                                                                 
+    <link href="../static/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="../static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">                     
+
+    <!-- Main Stylesheet File -->
+    <link href="../static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body id="body">
+<header id="header">
+    <div class="container">
+
+        <div id="logo" class="pull-left">
+            <h1><a href="#body" class="scrollto">Hanged<span>5game</span></a></h1>
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li class="menu-active"><a href="{% url 'starting' %}">Inicio</a></li>
+                <li><a href="#services">Jugar</a></li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+
+<!--==========================
+  Intro Section
+============================-->
+<section id="intro">
+
+    <div class="intro-content">
+        <div>
+            <a href="#services" class="btn-get-started scrollto" style="border-radius: 40%;">Juega ahora</a>
+           
+        </div>
+    </div>
+
+
+</section><!-- #intro -->
+
+<main id="main">
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12">
+                    <h2>¿Cómo juego?</h2>
+                    <p>"Si la letra está contenida en la palabra, el grupo o individuo toma otro turno.
+                        adivinando un
+                        carta. ...
+                        Si la letra no está contenida en la palabra, haga clic en el botón Reproducir de nuevo, una parte de la
+                        Se agrega el ahorcado.</p>
+                </div>
+                <div class="col-lg-8 col-sm-12">
+                    <div class="box wow fadeInLeft">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <img id="imageMan" src="../static/hangmanpict/1.JPG" alt="{{ fault }}"
+                                     height="200px"
+                                     width="150px">
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <span class="input-group-sm bottom-right">
+                                    {% for w in word %}
+                                        {% if w == "" %}
+                                            <b id="wordLetter{{ forloop.counter }}"
+                                               style="margin-right: 5px">___</b>
+                                        {% else %}
+                                            <b id="wordLetter{{ forloop.counter }}"
+                                               style="margin-right: 5px">{{ w }}</b>
+                                        {% endif %}
+                                    {% endfor %}
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-12">
+                            <span class="input-group-sm">
+                                <a id="a" onclick="wordUpd('a')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">A</a>
+                                <a id="b" onclick="wordUpd('b')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">B</a>
+                                <a id="c" onclick="wordUpd('c')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">C</a>
+                                <a id="d" onclick="wordUpd('d')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">D</a>
+                                <a id="e" onclick="wordUpd('e')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">E</a>
+                                <a id="f" onclick="wordUpd('f')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">F</a>
+                                <a id="g" onclick="wordUpd('g')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">G</a>
+                                <a id="h" onclick="wordUpd('h')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">H</a>
+                                <a id="i" onclick="wordUpd('i')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">I</a>
+                                <a id="j" onclick="wordUpd('j')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">J</a>
+                            </span>
+                                <span class="input-group-sm">
+                                <a id="k" onclick="wordUpd('k')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">K</a>
+                                <a id="l" onclick="wordUpd('l')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">L</a>
+                                <a id="m" onclick="wordUpd('m')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">M</a>
+                                <a id="n" onclick="wordUpd('n')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">N</a>
+                                <a id="o" onclick="wordUpd('o')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">O</a>
+                                <a id="p" onclick="wordUpd('p')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">P</a>
+                                <a id="q" onclick="wordUpd('q')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">Q</a>
+                                <a id="r" onclick="wordUpd('r')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">R</a>
+                                <a id="s" onclick="wordUpd('s')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">S</a>
+                                <a id="t" onclick="wordUpd('t')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">T</a>
+                            </span>
+                                 <span class="input-group-sm">
+                                <a id="u" onclick="wordUpd('u')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">U</a>
+                                <a id="v" onclick="wordUpd('v')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">V</a></a>
+                                <a id="w" onclick="wordUpd('w')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">W</a>
+                                <a id="x" onclick="wordUpd('x')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">X</a>
+                                <a id="y" onclick="wordUpd('y')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">Y</a>
+                                <a id="z" onclick="wordUpd('z')" class="btn btn-primary m-1"
+                                   style="height: 40px; width: 40px; border-radius: 40%; background-color: #eac4d5; color: #809bce">Z</a>
+                            </span>
+                            </div>
+                            <a hidden id="playAgain" style="font-size: 25px; margin-top: 25px; margin-left: 55px" href="{% url 'starting' %}">
+                                <i class="fa fa-gamepad"></i> Play Again</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <section id="invite">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12">
+                        <h2>¿Cómo puede jugar mi amigo/a?</h2>
+                        <p>Simplemente elige una palabra al azar de nuestra base de datos, copia la URL para compartir y ¡¡listo!!</p>
+                        <p>¡¡No olvides pedirle a tu amigo una captura de pantalla!!</p>
+                    </div>
+                    <div class="col-lg-8 col-sm-12">
+                        <div class="box wow fadeInLeft">
+                            <a id="generateNew" onclick="generateNewWord()" class="btn btn-primary"
+                                       style="color: rgb(0, 0, 0)">Generar nueva palabra</a>
+                            <h2 id="wordRandom">{{ wordForFriend.word }}</h2> <br>
+                            <label for="urlnewGame">Url for share</label>
+                            <a target="_blank" id="urlnewGame" href="http://{{ domain }}/{{ wordForFriend.uui }}">
+                        </div>
+                    </div>
+    
+    
+                </div>
+    
+            </div>
+    
+        </section><!-- #services -->
+
+    
+</main>
+<input type="hidden" id="fault" value="1">
+<input type="hidden" id="gameId" value="0">
+<!--==========================
+  Footer
+============================-->
+<footer id="footer">
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong>Hanged5</strong>. All Rights Reserved
+        </div>
+    </div>
+</footer><!-- #footer -->
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="../static/lib/jquery/jquery.min.js"></script>                     
+<script src="../static/lib/jquery/jquery-migrate.min.js"></script>
+<script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>                                   
+<script src="../static/lib/easing/easing.min.js"></script> 
+<script src="../static/lib/superfish/hoverIntent.js"></script> 
+<script src="../static/lib/superfish/superfish.min.js"></script> 
+<script src="../static/lib/wow/wow.min.js"></script>
+<script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="../static/lib/magnific-popup/magnific-popup.min.js"></script> 
+<script src="../static/lib/sticky/sticky.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+<!-- Contact Form JavaScript File -->
+<script src="../static/contactform/contactform.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="../static/js/main.js"></script>
+
+<script>
+    function generateNewWord() {
+        $.ajax({
+            url: '{% url "generate-word" %}',
+            data: {},
+            type: 'get',
+            success: function (data) {
+                $("#wordRandom").html(data.word);
+                const url = "http://" + data.domain + "/" + data.uuid;
+                $("#urlnewGame").attr('href', url);
+                $("#urlnewGame").html(url);
+            }
+        });
+    }
+    function wordUpd(letter) {
+        id ={ wordId };
+        fault = $('#fault').val();
+        gameId = $('#gameId').val();
+        $.ajax({
+            url: '{% url "updated-word-game" %}',
+            data: {'wordId': id, 'faults': fault, 'letter': letter, 'gameId': gameId},
+            type: 'get',
+            success: function (data) {
+                if (data.lose) {
+                    $('#imageMan').attr('src', 'static/hangmanpict/7.jpg');
+                    $('#playAgain').removeAttr('hidden');
+                    alert('You lose, the word is ' + data.word)
+                } else {
+                    if (data.win) {
+                        $('#gameId').val(data.gameId);
+                        $('#' + letter).removeClass('btn-primary');
+                        $('#' + letter).addClass('btn-success disabled');
+                        for (let i = 0; i < data.wordArray.length; i++) {
+                            if (data.wordArray[i] !== "") {
+                                $("#wordLetter" + (i + 1).toString()).html(data.wordArray[i])
+                            }
+                        }
+                        $('#imageMan').attr('src', 'static/hangmanpict/8.jpg');
+                        $('#playAgain').removeAttr('hidden');
+                        alert("You win")
+                    } else {
+                        if (data.fault === 0) {
+                            $('#gameId').val(data.gameId);
+                            $('#' + letter).removeClass('btn-primary');
+                            $('#' + letter).addClass('btn-success disabled');
+                            for (let i = 0; i < data.wordArray.length; i++) {
+                                if (data.wordArray[i] !== "") {
+                                    $("#wordLetter" + (i + 1).toString()).html(data.wordArray[i])
+                                }
+                            }
+                        } else {
+                            $('#gameId').val(data.gameId);
+                            $('#imageMan').attr('src', 'static/hangmanpict/' + data.fault + '.jpg');
+                            $('#' + letter).removeClass('btn-primary');
+                            $('#' + letter).addClass('btn-danger disabled');
+
+                        }
+                    }
+                }
+            }
+        });
+
+    }
+</script>
+
+</body>
+</html>
